@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Experiment Resume - Retro Game Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000;
+            color: #0f0;
+            line-height: 1.5;
+        }
+        .pixel-border {
+            box-shadow: 0 0 0 3px #0f0;
+            border: 3px solid #000;
+        }
+        .blinking {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-4xl mx-auto bg-black pixel-border p-4 md:p-6">
+        <header class="text-center mb-8">
+            <h1 class="text-xl md:text-3xl mb-4">LAB EXPERIMENT #42069</h1>
+            <p class="text-lg blinking">SUBJECT RESUME</p>
+        </header>
+
+        <!-- Subject Details -->
+        <div class="mb-8">
+            <h2 class="text-lg mb-4">SUBJECT DETAILS</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-24 h-24 bg-green-500 mb-4 md:mb-0 md:mr-4 pixel-border relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="bi bi-person-fill text-3xl text-black"></i>
+                    </div>
+                </div>
+                <div>
+                    <p>NAME: Shiv Chandan</p>
+                    <p>LOCATION: Jammu, J&K</p>
+                    <p>CONTACT: +91-9682612204 | Shivemo25@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mb-8">
+            <h2 class="text-lg mb-4">EDUCATION</h2>
+            <div class="space-y-4">
+                <div class="pixel-border p-2">
+                    <p><strong>Master in Clinical Psychology</strong> - Lovely Professional University (2023-2025)</p>
+                </div>
+                <div class="pixel-border p-2">
+                    <p><strong>Master in History</strong> - Delhi University SOL (2020-2023)</p>
+                </div>
+                <div class="pixel-border p-2">
+                    <p><strong>Bachelor's of Arts (History)</strong> - Cluster University Jammu (2018-2020)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="mb-8">
+            <h2 class="text-lg mb-4">EXPERIENCE</h2>
+            <div class="space-y-4">
+                <div class="pixel-border p-2">
+                    <p><strong>Clinical Psychologist</strong> - Government Medical College Jammu (5/24-current)</p>
+                    <ul class="list-none space-y-2">
+                        <li><i class="bi bi-star-fill mr-2"></i>Maintained accurate records of client progress, diagnosis, and treatments.</li>
+                        <li><i class="bi bi-star-fill mr-2"></i>Reviewed medical charts or legal documents related to patient history.</li>
+                        <li><i class="bi bi-star-fill mr-2"></i>Provided individualized assessments, including cognitive ability testing and personality assessment.</li>
+                    </ul>
+                </div>
+                <div class="pixel-border p-2">
+                    <p><strong>Freelance</strong> - Numestematics</p>
+                    <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
+                </div>
+                <div class="pixel-border p-2">
+                    <p><strong>Museum Assistant</strong> - Dogra Art Museum (7/22-current)</p>
+                    <ul class="list-none space-y-2">
+                        <li><i class="bi bi-star-fill mr-2"></i>Provided customer service support by troubleshooting technical issues related to audio and visual equipment.</li>
+                        <li><i class="bi bi-star-fill mr-2"></i>Created displays for exhibitions, arranging objects according to themes or stories.</li>
+                        <li><i class="bi bi-star-fill mr-2"></i>Drafted press releases announcing upcoming events or new acquisitions for social media distribution.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-8">
+            <h2 class="text-lg mb-4">SKILLS</h2>
+            <ul class="list-none space-y-2">
+                <li><i class="bi bi-star-fill mr-2"></i>Academic research and writing in History and Clinical Psychology</li>
+                <li><i class="bi bi-star-fill mr-2"></i>Content writing and editing for various audiences</li>
+                <li><i class="bi bi-star-fill mr-2"></i>Project management and organization</li>
+                <li><i class="bi bi-star-fill mr-2"></i>Strong critical thinking, analysis, and problem-solving skills</li>
+                <li><i class="bi bi-star-fill mr-2"></i>Effective communication and presentation skills</li>
+                <li><i class="bi bi-star-fill mr-2"></i>Proficient in Microsoft Office and Google Workspace</li>
+            </ul>
+        </div>
+
+        <!-- Languages -->
+        <div class="mb-8">
+            <h2 class="text-lg mb-4">LANGUAGES</h2>
+            <ul class="list-none space-y-2">
+                <li><i class="bi bi-chat-dots-fill mr-2"></i>English: Proficient</li>
+                <li><i class="bi bi-chat-dots-fill mr-2"></i>Urdu: Proficient</li>
+                <li><i class="bi bi-chat-dots-fill mr-2"></i>Hindi: Proficient</li>
+            </ul>
+        </div>
+
+        <!-- Researcher Notes -->
+        <div>
+            <h2 class="text-lg mb-4">RESEARCHER NOTES</h2>
+            <div class="pixel-border p-2 mb-4">
+                <p class="blinking">WARNING: Subject exhibits strong research and communication abilities.</p>
+            </div>
+            <p>Subject has a diverse background, contributing to the understanding of clinical psychology and historical research.</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation for "typing" effect
+        const elements = document.querySelectorAll('p, li');
+        elements.forEach((element, index) => {
+            const text = element.textContent;
+            element.textContent = '';
+            let i = 0;
+            setTimeout(() => {
+                const interval = setInterval(() => {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 50);
+            }, index * 1000);
+        });
+    </script>
+</body>
+</html>
