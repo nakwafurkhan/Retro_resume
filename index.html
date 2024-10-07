@@ -3,147 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Experiment Resume - Retro Game Style</title>
+    <title>Shiv Chandan's Retro Web Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
+        /* Resetting default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Press Start 2P', cursive;
-            background-color: #000;
-            color: #0f0;
-            line-height: 1.5;
+            background-color: #0d0d0d; /* Darker background for the whole page */
+            color: #e0e0e0; /* Light gray text for contrast */
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        .pixel-border {
-            box-shadow: 0 0 0 3px #0f0;
-            border: 3px solid #000;
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #4b0082, #800080); /* Dark purple gradient */
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #ffcc00; /* Bright accent border */
         }
-        .blinking {
-            animation: blink 1s step-end infinite;
+
+        header h1 {
+            font-size: 3.5em;
+            color: #ffffff; /* White text for headers */
+            text-shadow: 2px 2px #000;
         }
-        @keyframes blink {
-            50% { opacity: 0; }
+
+        header h2 {
+            font-size: 2em;
+            color: #e0e0e0; /* Light gray for subheading */
+            margin: 20px 0;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #ffcc00; /* Bright accent color */
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #800080; /* Dark purple on hover */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        section {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: #1a1a1a; /* Dark gray background for sections */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(20px); /* Start slightly lower for animation */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
+        }
+
+        section.visible {
+            opacity: 1; /* Show section */
+            transform: translateY(0); /* Move to original position */
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+            color: #ffcc00; /* Bright yellow for headings */
+        }
+
+        section p {
+            color: #e0e0e0; /* Light gray text for paragraphs */
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Add gap between skills */
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #3cb371; /* Medium sea green for skills */
+            color: #000000; /* Black text for contrast */
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1.2em;
+            transition: transform 0.2s, background-color 0.3s; /* Added background color transition */
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(10px); /* Start slightly lower for animation */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
+        }
+
+        .skill.visible {
+            opacity: 1; /* Show skill */
+            transform: translateY(0); /* Move to original position */
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+            background: #008080; /* Teal on hover */
+            color: #ffffff; /* Change text color to white on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a1a; /* Dark footer */
+            color: #e0e0e0; /* Light text */
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #ffcc00; /* Bright accent color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #800080; /* Change color on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em; /* Smaller font size for mobile */
+            }
+
+            header h2 {
+                font-size: 1.5em; /* Smaller subheading */
+            }
+
+            nav a {
+                font-size: 1em; /* Smaller nav links */
+            }
+
+            section {
+                padding: 15px; /* Reduce padding for smaller screens */
+            }
+
+            .skill {
+                font-size: 1em; /* Smaller font size for skills */
+                padding: 8px; /* Reduced padding */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5em; /* Further reduction for very small screens */
+            }
+
+            header h2 {
+                font-size: 1.2em; /* Further reduction for subheading */
+            }
+
+            nav a {
+                font-size: 0.9em; /* Even smaller nav links */
+            }
+
+            section {
+                margin: 10px 0; /* Reduce margin between sections */
+            }
+
+            .skill {
+                font-size: 0.9em; /* Smaller font size for skills */
+            }
         }
     </style>
 </head>
-<body class="p-4">
-    <div class="max-w-4xl mx-auto bg-black pixel-border p-4 md:p-6">
-        <header class="text-center mb-8">
-            <h1 class="text-xl md:text-3xl mb-4">LAB EXPERIMENT #42069</h1>
-            <p class="text-lg blinking">SUBJECT RESUME</p>
-        </header>
+<body>
 
-        <!-- Subject Details -->
-        <div class="mb-8">
-            <h2 class="text-lg mb-4">SUBJECT DETAILS</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="w-24 h-24 bg-green-500 mb-4 md:mb-0 md:mr-4 pixel-border relative">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i class="bi bi-person-fill text-3xl text-black"></i>
-                    </div>
-                </div>
-                <div>
-                    <p>NAME: Shiv Chandan</p>
-                    <p>LOCATION: Jammu, J&K</p>
-                    <p>CONTACT: +91-9682612204 | Shivemo25@gmail.com</p>
-                </div>
-            </div>
-        </div>
+<header>
+    <h1>Shiv Chandan</h1>
+    <h2>Web Resume</h2>
+    <nav>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+    </nav>
+</header>
 
-        <!-- Education -->
-        <div class="mb-8">
-            <h2 class="text-lg mb-4">EDUCATION</h2>
-            <div class="space-y-4">
-                <div class="pixel-border p-2">
-                    <p><strong>Master in Clinical Psychology</strong> - Lovely Professional University (2023-2025)</p>
-                </div>
-                <div class="pixel-border p-2">
-                    <p><strong>Master in History</strong> - Delhi University SOL (2020-2023)</p>
-                </div>
-                <div class="pixel-border p-2">
-                    <p><strong>Bachelor's of Arts (History)</strong> - Cluster University Jammu (2018-2020)</p>
-                </div>
-            </div>
-        </div>
+<main class="container">
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Clinical Psychologist at Government Medical College Jammu.</p>
+        <p>Provided individualized assessments and maintained client records.</p>
+    </section>
 
-        <!-- Experience -->
-        <div class="mb-8">
-            <h2 class="text-lg mb-4">EXPERIENCE</h2>
-            <div class="space-y-4">
-                <div class="pixel-border p-2">
-                    <p><strong>Clinical Psychologist</strong> - Government Medical College Jammu (5/24-current)</p>
-                    <ul class="list-none space-y-2">
-                        <li><i class="bi bi-star-fill mr-2"></i>Maintained accurate records of client progress, diagnosis, and treatments.</li>
-                        <li><i class="bi bi-star-fill mr-2"></i>Reviewed medical charts or legal documents related to patient history.</li>
-                        <li><i class="bi bi-star-fill mr-2"></i>Provided individualized assessments, including cognitive ability testing and personality assessment.</li>
-                    </ul>
-                </div>
-                <div class="pixel-border p-2">
-                    <p><strong>Freelance</strong> - Numestematics</p>
-                    <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
-                </div>
-                <div class="pixel-border p-2">
-                    <p><strong>Museum Assistant</strong> - Dogra Art Museum (7/22-current)</p>
-                    <ul class="list-none space-y-2">
-                        <li><i class="bi bi-star-fill mr-2"></i>Provided customer service support by troubleshooting technical issues related to audio and visual equipment.</li>
-                        <li><i class="bi bi-star-fill mr-2"></i>Created displays for exhibitions, arranging objects according to themes or stories.</li>
-                        <li><i class="bi bi-star-fill mr-2"></i>Drafted press releases announcing upcoming events or new acquisitions for social media distribution.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <section id="education">
+        <h2>Education</h2>
+        <p>Master in Clinical Psychology - LPU</p>
+        <p>Master in History - Delhi University SOL</p>
+    </section>
 
-        <!-- Skills -->
-        <div class="mb-8">
-            <h2 class="text-lg mb-4">SKILLS</h2>
-            <ul class="list-none space-y-2">
-                <li><i class="bi bi-star-fill mr-2"></i>Academic research and writing in History and Clinical Psychology</li>
-                <li><i class="bi bi-star-fill mr-2"></i>Content writing and editing for various audiences</li>
-                <li><i class="bi bi-star-fill mr-2"></i>Project management and organization</li>
-                <li><i class="bi bi-star-fill mr-2"></i>Strong critical thinking, analysis, and problem-solving skills</li>
-                <li><i class="bi bi-star-fill mr-2"></i>Effective communication and presentation skills</li>
-                <li><i class="bi bi-star-fill mr-2"></i>Proficient in Microsoft Office and Google Workspace</li>
-            </ul>
-        </div>
-
-        <!-- Languages -->
-        <div class="mb-8">
-            <h2 class="text-lg mb-4">LANGUAGES</h2>
-            <ul class="list-none space-y-2">
-                <li><i class="bi bi-chat-dots-fill mr-2"></i>English: Proficient</li>
-                <li><i class="bi bi-chat-dots-fill mr-2"></i>Urdu: Proficient</li>
-                <li><i class="bi bi-chat-dots-fill mr-2"></i>Hindi: Proficient</li>
-            </ul>
-        </div>
-
-        <!-- Researcher Notes -->
-        <div>
-            <h2 class="text-lg mb-4">RESEARCHER NOTES</h2>
-            <div class="pixel-border p-2 mb-4">
-                <p class="blinking">WARNING: Subject exhibits strong research and communication abilities.</p>
-            </div>
-            <p>Subject has a diverse background, contributing to the understanding of clinical psychology and historical research.</p>
-        </div>
+    <h2 id="skills">Skills</h2>
+    <div class="skills">
+        <div class="skill">Research</div>
+        <div class="skill">Writing</div>
+        <div class="skill">Project Management</div>
+        <div class="skill">Clinical Psychology</div>
     </div>
+</main>
 
-    <script>
-        // Simple animation for "typing" effect
-        const elements = document.querySelectorAll('p, li');
-        elements.forEach((element, index) => {
-            const text = element.textContent;
-            element.textContent = '';
-            let i = 0;
-            setTimeout(() => {
-                const interval = setInterval(() => {
-                    if (i < text.length) {
-                        element.textContent += text.charAt(i);
-                        i++;
-                    } else {
-                        clearInterval(interval);
-                    }
-                }, 50);
-            }, index * 1000);
+<footer>
+    <p>Contact: <a href="mailto:shivemo25@gmail.com">shivemo25@gmail.com</a></p>
+    <p>Location: Jammu, J&K</p>
+</footer>
+
+<script>
+    // Smooth scroll to sections
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-    </script>
+    });
+
+    // Fade in sections and skills on scroll
+    const sections = document.querySelectorAll('section');
+    const skills = document.querySelectorAll('.skill');
+
+    const options = {
+        root: null,
+        threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    skills.forEach(skill => {
+        observer.observe(skill);
+    });
+</script>
+
 </body>
 </html>
