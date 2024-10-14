@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiv Chandan's Retro Web Resume</title>
+    <title>Shiv Chandan's Contact</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
     <style>
+        /* Copy the same CSS styles from your main file here */
+        /* (Same CSS as in the previous HTML files) */
         /* Resetting default margins and paddings */
         * {
             margin: 0;
@@ -95,37 +96,6 @@
             color: #e0e0e0; /* Light gray text for paragraphs */
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px; /* Add gap between skills */
-            margin-top: 20px;
-        }
-
-        .skill {
-            background: #3cb371; /* Medium sea green for skills */
-            color: #000000; /* Black text for contrast */
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 1.2em;
-            transition: transform 0.2s, background-color 0.3s; /* Added background color transition */
-            opacity: 0; /* Start hidden for animation */
-            transform: translateY(10px); /* Start slightly lower for animation */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
-        }
-
-        .skill.visible {
-            opacity: 1; /* Show skill */
-            transform: translateY(0); /* Move to original position */
-        }
-
-        .skill:hover {
-            transform: scale(1.1);
-            background: #008080; /* Teal on hover */
-            color: #ffffff; /* Change text color to white on hover */
-        }
-
         footer {
             text-align: center;
             padding: 20px;
@@ -165,11 +135,6 @@
             section {
                 padding: 15px; /* Reduce padding for smaller screens */
             }
-
-            .skill {
-                font-size: 1em; /* Smaller font size for skills */
-                padding: 8px; /* Reduced padding */
-            }
         }
 
         @media (max-width: 480px) {
@@ -188,10 +153,6 @@
             section {
                 margin: 10px 0; /* Reduce margin between sections */
             }
-
-            .skill {
-                font-size: 0.9em; /* Smaller font size for skills */
-            }
         }
     </style>
 </head>
@@ -199,7 +160,7 @@
 
 <header>
     <h1>Shiv Chandan</h1>
-    <h2>Web Resume</h2>
+    <h2>Contact</h2>
     <nav>
         <a href="./index.html">Home</a>
         <a href="./experience.html">Experience</a>
@@ -210,25 +171,15 @@
 </header>
 
 <main class="container">
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Clinical Psychologist at Government Medical College Jammu.</p>
-        <p>Provided individualized assessments and maintained client records.</p>
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>If you would like to get in touch, please feel free to reach out via email or through LinkedIn.</p>
+        <ul>
+            <li>Email: <a href="mailto:shivemo25@gmail.com">shivemo25@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">Your LinkedIn Profile</a></li>
+            <li>Location: Jammu, J&K</li>
+        </ul>
     </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <p>Master in Clinical Psychology - LPU</p>
-        <p>Master in History - Delhi University SOL</p>
-    </section>
-
-    <h2 id="skills">Skills</h2>
-    <div class="skills">
-        <div class="skill">Research</div>
-        <div class="skill">Writing</div>
-        <div class="skill">Project Management</div>
-        <div class="skill">Clinical Psychology</div>
-    </div>
 </main>
 
 <footer>
@@ -251,9 +202,8 @@
         });
     });
 
-    // Fade in sections and skills on scroll
+    // Fade in sections on scroll
     const sections = document.querySelectorAll('section');
-    const skills = document.querySelectorAll('.skill');
 
     const options = {
         root: null,
@@ -271,10 +221,6 @@
 
     sections.forEach(section => {
         observer.observe(section);
-    });
-
-    skills.forEach(skill => {
-        observer.observe(skill);
     });
 </script>
 
