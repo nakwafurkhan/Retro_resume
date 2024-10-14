@@ -10,9 +10,10 @@ body {
     background-color: #0d0d0d; /* Darker background for the whole page */
     color: #e0e0e0; /* Light gray text for contrast */
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Header Styles */
 header {
     text-align: center;
     padding: 50px;
@@ -24,7 +25,7 @@ header {
 header h1 {
     font-size: 3.5em;
     color: #ffffff; /* White text for headers */
-    text-shadow: 2px 2px #000;
+    text-shadow: 2px 2px #000; /* Shadow effect */
 }
 
 header h2 {
@@ -33,6 +34,7 @@ header h2 {
     margin: 20px 0;
 }
 
+/* Navigation Styles */
 nav {
     margin: 20px 0;
 }
@@ -42,22 +44,16 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-size: 1.2em;
-    transition: color 0.3s;
+    transition: color 0.3s; /* Transition for hover effect */
 }
 
 nav a:hover {
     color: #800080; /* Dark purple on hover */
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
+/* Section Styles */
 section {
-    margin: 20px 0;
+    margin: 20px auto;
     width: 100%;
     max-width: 600px;
     padding: 20px;
@@ -84,7 +80,7 @@ section p {
     color: #e0e0e0; /* Light gray text for paragraphs */
 }
 
-/* Skills animation */
+/* Skills Animation Styles */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -92,30 +88,32 @@ section p {
     gap: 15px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
+    margin: 20px auto; /* Center the skills section */
 }
 
 .skills.skill-visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Show skills */
+    transform: translateY(0); /* Move to original position */
 }
 
 .skill {
-    background: #4b0082;
-    color: #e0e0e0;
+    background: #4b0082; /* Dark purple background for skills */
+    color: #e0e0e0; /* Light gray text */
     padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
+    transform: scale(0.8); /* Slightly smaller */
+    transition: transform 0.3s ease; /* Transition for scaling */
 }
 
 .skill:hover {
-    transform: scale(1);
+    transform: scale(1); /* Scale up on hover */
     background: #ffcc00; /* Change color on hover */
     color: #0d0d0d; /* Dark text on hover */
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
@@ -125,13 +123,13 @@ footer {
 }
 
 footer p {
-    margin: 0;
+    margin: 0; /* Remove default margin */
 }
 
 footer a {
     color: #ffcc00; /* Bright accent color */
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s; /* Transition for hover effect */
 }
 
 footer a:hover {

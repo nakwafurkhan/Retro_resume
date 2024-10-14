@@ -6,45 +6,54 @@ document.querySelectorAll('nav a').forEach(anchor => {
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
         
-        targetSection.scrollIntoView({
-            behavior: 'smooth'
-        });
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
 // Fade in sections on scroll
 const sections = document.querySelectorAll('section');
 
-const options = {
+const sectionOptions = {
     root: null,
     threshold: 0.1,
 };
 
-const observer = new IntersectionObserver((entries) => {
+const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            sectionObserver.unobserve(entry.target);
         }
     });
-}, options);
+}, sectionOptions);
 
 sections.forEach(section => {
-    observer.observe(section);
+    sectionObserver.observe(section);
 });
 
 // Smoothly animate skills when they come into view
+const skillsContainer = document.querySelector('.skills');
 const skillElements = document.querySelectorAll('.skills .skill');
 
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('skill-visible');
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, options);
+if (skillsContainer && skillElements.length > 0) {
+    const skillOptions = {
+        root: null,
+        threshold: 0.1,
+    };
 
-skillElements.forEach(skill => {
-    skillObserver.observe(skill);
-});
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                skillsContainer.classList.add('skill-visible');
+                skillElements.forEach(skill => skill.classList.add('skill-visible'));
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, skillOptions);
+
+    skillObserver.observe(skillsContainer);
+}
