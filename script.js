@@ -5,16 +5,15 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-
+        
         targetSection.scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Fade in sections and skills on scroll
+// Fade in sections on scroll
 const sections = document.querySelectorAll('section');
-const skills = document.querySelectorAll('.skill');
 
 const options = {
     root: null,
@@ -34,6 +33,18 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-skills.forEach(skill => {
-    observer.observe(skill);
+// Smoothly animate skills when they come into view
+const skillElements = document.querySelectorAll('.skills .skill');
+
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('skill-visible');
+            skillObserver.unobserve(entry.target);
+        }
+    });
+}, options);
+
+skillElements.forEach(skill => {
+    skillObserver.observe(skill);
 });

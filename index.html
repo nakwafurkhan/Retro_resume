@@ -6,207 +6,22 @@
     <title>Shiv Chandan's Retro Web Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <style>
-        /* Resetting default margins and paddings */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Press Start 2P', cursive;
-            background-color: #0d0d0d; /* Darker background for the whole page */
-            color: #e0e0e0; /* Light gray text for contrast */
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(135deg, #4b0082, #800080); /* Dark purple gradient */
-            position: relative;
-            overflow: hidden;
-            border-bottom: 5px solid #ffcc00; /* Bright accent border */
-        }
-
-        header h1 {
-            font-size: 3.5em;
-            color: #ffffff; /* White text for headers */
-            text-shadow: 2px 2px #000;
-        }
-
-        header h2 {
-            font-size: 2em;
-            color: #e0e0e0; /* Light gray for subheading */
-            margin: 20px 0;
-        }
-
-        nav {
-            margin: 20px 0;
-        }
-
-        nav a {
-            color: #ffcc00; /* Bright accent color */
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #800080; /* Dark purple on hover */
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        section {
-            margin: 20px 0;
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
-            background: #1a1a1a; /* Dark gray background for sections */
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            opacity: 0; /* Start hidden for animation */
-            transform: translateY(20px); /* Start slightly lower for animation */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
-        }
-
-        section.visible {
-            opacity: 1; /* Show section */
-            transform: translateY(0); /* Move to original position */
-        }
-
-        section h2 {
-            margin-bottom: 10px;
-            color: #ffcc00; /* Bright yellow for headings */
-        }
-
-        section p {
-            color: #e0e0e0; /* Light gray text for paragraphs */
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px; /* Add gap between skills */
-            margin-top: 20px;
-        }
-
-        .skill {
-            background: #3cb371; /* Medium sea green for skills */
-            color: #000000; /* Black text for contrast */
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 1.2em;
-            transition: transform 0.2s, background-color 0.3s; /* Added background color transition */
-            opacity: 0; /* Start hidden for animation */
-            transform: translateY(10px); /* Start slightly lower for animation */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
-        }
-
-        .skill.visible {
-            opacity: 1; /* Show skill */
-            transform: translateY(0); /* Move to original position */
-        }
-
-        .skill:hover {
-            transform: scale(1.1);
-            background: #008080; /* Teal on hover */
-            color: #ffffff; /* Change text color to white on hover */
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1a1a1a; /* Dark footer */
-            color: #e0e0e0; /* Light text */
-            margin-top: 30px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            color: #ffcc00; /* Bright accent color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #800080; /* Change color on hover */
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 3em; /* Smaller font size for mobile */
-            }
-
-            header h2 {
-                font-size: 1.5em; /* Smaller subheading */
-            }
-
-            nav a {
-                font-size: 1em; /* Smaller nav links */
-            }
-
-            section {
-                padding: 15px; /* Reduce padding for smaller screens */
-            }
-
-            .skill {
-                font-size: 1em; /* Smaller font size for skills */
-                padding: 8px; /* Reduced padding */
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2.5em; /* Further reduction for very small screens */
-            }
-
-            header h2 {
-                font-size: 1.2em; /* Further reduction for subheading */
-            }
-
-            nav a {
-                font-size: 0.9em; /* Even smaller nav links */
-            }
-
-            section {
-                margin: 10px 0; /* Reduce margin between sections */
-            }
-
-            .skill {
-                font-size: 0.9em; /* Smaller font size for skills */
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
 <header>
     <h1>Shiv Chandan</h1>
     <h2>Web Resume</h2>
+    
     <nav>
         <a href="./index.html">Home</a>
         <a href="./experience.html">Experience</a>
         <a href="./education.html">Education</a>
         <a href="./skills.html">Skills</a>
-        <a href="./contact.html">contact</a>
+        <a href="./contact.html">Contact</a>
     </nav>
+    
 </header>
 
 <main class="container">
@@ -236,47 +51,7 @@
     <p>Location: Jammu, J&K</p>
 </footer>
 
-<script>
-    // Smooth scroll to sections
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Fade in sections and skills on scroll
-    const sections = document.querySelectorAll('section');
-    const skills = document.querySelectorAll('.skill');
-
-    const options = {
-        root: null,
-        threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    skills.forEach(skill => {
-        observer.observe(skill);
-    });
-</script>
+<script src="./script.js"></script>
 
 </body>
 </html>
