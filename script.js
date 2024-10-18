@@ -57,3 +57,11 @@ if (skillsContainer && skillElements.length > 0) {
 
     skillObserver.observe(skillsContainer);
 }
+// Select all anchor tags in the nav
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        const targetPage = anchor.getAttribute('href'); // Get href value
+        window.location.href = targetPage; // Redirect to the new page
+    });
+});
